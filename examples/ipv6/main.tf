@@ -184,6 +184,9 @@ resource "aws_flow_log" "vpcflowlogs" {
     Name        = "${local.resource_prefix.value}-flowlogs"
     Environment = local.resource_prefix.value
   }
+  versioning {
+    enabled = true
+  }
 }
 
 output "ec2_public_dns" {
